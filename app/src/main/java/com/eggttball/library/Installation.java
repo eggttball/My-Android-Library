@@ -10,8 +10,9 @@ import android.content.Context;
 
 /**
  * <pre>
- * 取得唯一的 Installation ID。
- * 意即，同一個手機安裝 app A 與 app B 會得到不同的 ID
+ * 取得唯一的 Installation ID，用於識別使用者對 App 的第一次安裝。
+ * 意即，同一個手機安裝 app A 與 app B 會得到不同的 ID。
+ * 若需要唯一識別 Device，請參考 {@link com.eggttball.library.DeviceIdManager}
  *
  * Created by eggttball on 2015/1/3.
  * 參考：http://android-developers.blogspot.tw/2011/03/identifying-app-installations.html
