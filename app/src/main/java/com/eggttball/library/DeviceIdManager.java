@@ -12,6 +12,7 @@ import java.util.UUID;
  * 這個類別是為了取得設備的唯一 ID，意即不管重複安裝幾次，安裝了多少個 App，都會得到同樣的 ID。<br />
  * 但是使用 DeviceID 來協助識別使用者，在某些情況下會有問題。<br />
  * 例如某人安裝了 App，後來將手機 reset 並轉贈他人，之後又安裝了同一款 App，那麼應該要識別為不同的使用者。<br />
+ * 解決方式可參考 {@link com.eggttball.library.Installation}
  * 取得 ID 的程序如下：
  * <ol>
  * 	<li>先從 SharedPreferences 判別是否曾把 ID 儲存起來，若有，直接讀取。 </li>
