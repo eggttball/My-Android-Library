@@ -9,7 +9,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
 /**
- * 集合與 Device 相關的常用方法，例如取得設備的唯一 ID。
+ * 集合與 Device 相關的常用方法，例如取得設備的唯一 ID，或是判斷 Device 是否為模擬器。
  * Created by eggttball on 2015/1/2.
  */
 public final class DeviceManager {
@@ -74,6 +74,15 @@ public final class DeviceManager {
         }
 
         return _deviceId;
+    }
+
+
+    /**
+     * 判斷目前的執行裝置是否為模擬器？
+     */
+    public boolean isEmulator()	{
+        String android_id = Secure.getString(_context.getContentResolver(), Secure.ANDROID_ID);
+        return (android_id == null);
     }
 
 
