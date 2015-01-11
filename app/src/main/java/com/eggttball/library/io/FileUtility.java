@@ -335,4 +335,48 @@ public class FileUtility {
         return value;
     }
 
+
+    /**
+     * 判斷開啟一個檔案時應該使用的 MIME 型別
+     */
+    public static String getMIME(File file)    {
+        String type;
+        String fileName = file.getName();
+        // 取得副檔名
+        String ext = fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length());
+
+        // 根據副檔名決定 MIME 型別
+        switch (ext.toLowerCase())  {
+            case "m4a":
+            case "mp3":
+            case "mid":
+            case "xmf":
+            case "ogg":
+            case "wav":
+                type = "audio";
+                break;
+
+            case "3gp":
+            case "mp4":
+                type = "video";
+                break;
+
+            case "jpg":
+            case "gif":
+            case "png":
+            case "jpeg":
+            case "bmp":
+                type = "image";
+                break;
+
+            default:
+                // 送出 Intent 時，會跳出 App 清單給使用者自己選擇
+                type = "*";
+                break;
+        }
+
+        type += "/*";
+        return type;
+    }
+
 }
